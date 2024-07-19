@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from 'src/app/config/config';
-import { json } from 'stream/consumers';
+
 
 export type UserType = UserModel | undefined;
 
@@ -136,7 +136,7 @@ export class AuthService implements OnDestroy {
       }
 
       this.token = localStorage.getItem("token");
-      this.user = json.parse(lsValue);
+      this.user = JSON.parse(lsValue);
       const authData = JSON.parse(lsValue);
       return authData;
     } catch (error) {
