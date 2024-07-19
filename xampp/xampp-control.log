@@ -1,0 +1,40 @@
+12:49:16 a. m.  [main] 	Initializing Control Panel
+12:49:16 a. m.  [main] 	Windows Version:  Enterprise  64-bit
+12:49:16 a. m.  [main] 	XAMPP Version: 7.4.29
+12:49:16 a. m.  [main] 	Control Panel Version: 3.3.0  [ Compiled: Apr 6th 2021 ]
+12:49:16 a. m.  [main] 	You are not running with administrator rights! This will work for
+12:49:16 a. m.  [main] 	most application stuff but whenever you do something with services
+12:49:16 a. m.  [main] 	there will be a security dialogue or things will break! So think 
+12:49:16 a. m.  [main] 	about running this application with administrator rights!
+12:49:16 a. m.  [main] 	XAMPP Installation Directory: "c:\users\jordy\onedrive\escritorio\curso de udemy\xampp\"
+12:49:16 a. m.  [main] 	WARNING: Your install directory contains spaces.  This may break programs/scripts
+12:49:16 a. m.  [main] 	Checking for prerequisites
+12:49:18 a. m.  [main] 	All prerequisites found
+12:49:18 a. m.  [main] 	Initializing Modules
+12:49:18 a. m.  [main] 	The FileZilla module is disabled
+12:49:18 a. m.  [main] 	The Mercury module is disabled
+12:49:18 a. m.  [main] 	Starting Check-Timer
+12:49:18 a. m.  [main] 	Control Panel Ready
+12:50:48 a. m.  [main] 	Deinitializing Modules
+12:50:48 a. m.  [main] 	Deinitializing Control Panel
+
+6:19:36 p. m.  [main] 	Initializing Control Panel
+6:19:36 p. m.  [main] 	Windows Version:  Enterprise  64-bit
+6:19:36 p. m.  [main] 	XAMPP Version: 7.4.29
+6:19:36 p. m.  [main] 	Control Panel Version: 3.3.0  [ Compiled: Apr 6th 2021 ]
+6:19:36 p. m.  [main] 	You are not running with administrator rights! This will work for
+6:19:36 p. m.  [main] 	most application stuff but whenever you do something with services
+6:19:36 p. m.  [main] 	there will be a security dialogue or things will break! So think 
+6:19:36 p. m.  [main] 	about running this application with administrator rights!
+6:19:36 p. m.  [main] 	XAMPP Installation Directory: "c:\users\jordy\onedrive\escritorio\curso de udemy\xampp\"
+6:19:36 p. m.  [main] 	WARNING: Your install directory contains spaces.  This may break programs/scripts
+6:19:37 p. m.  [main] 	Checking for prerequisites
+6:19:38 p. m.  [main] 	All prerequisites found
+6:19:38 p. m.  [main] 	Initializing Modules
+6:19:38 p. m.  [main] 	The FileZilla module is disabled
+6:19:38 p. m.  [main] 	The Mercury module is disabled
+6:19:38 p. m.  [main] 	Starting Check-Timer
+6:19:38 p. m.  [main] 	Control Panel Ready
+23:57:59  [main] 	Deinitializing Modules
+23:57:59  [main] 	Deinitializing Control Panel
+
