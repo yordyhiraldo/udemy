@@ -7,10 +7,12 @@
     "require": {
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.9",
         "laravel/framework": "^8.54",
         "laravel/tinker": "^2.5",
-        "tymon/jwt-auth": "^1.0@dev"
+        "owen-oj/laravel-getid3": "^2.3",
+        "tymon/jwt-auth": "^1.0@dev",
+        "vimeo/laravel": "^5.9"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

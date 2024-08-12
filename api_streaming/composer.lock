@@ -4,8 +4,77 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "254b1c441428b3b4c8f7091ebd379aca",
+    "content-hash": "5c6921a8404388b4427dc17ed54e05ce",
     "packages": [
+        {
+            "name": "ankitpokhrel/tus-php",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ankitpokhrel/tus-php.git",
+                "reference": "20671422b433aa45196f89906acf7c4328043ab8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ankitpokhrel/tus-php/zipball/20671422b433aa45196f89906acf7c4328043ab8",
+                "reference": "20671422b433aa45196f89906acf7c4328043ab8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.3 || ^7.0",
+                "nesbot/carbon": "^1.26.3 || ^2.0",
+                "php": "^7.2.5 || ^8.0",
+                "predis/predis": "^1.1 || ^2.0",
+                "ramsey/uuid": "^3.7 || ^4.0",
+                "symfony/console": "^5.0 || ^6.0",
+                "symfony/event-dispatcher": "^5.0 || ^6.0",
+                "symfony/http-foundation": "^5.0.7 || ^6.0",
+                "symfony/mime": "^5.0.9 || ^6.0"
+            },
+            "require-dev": {
+                "ext-pcntl": "*",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "mockery/mockery": "^1.3.4 || ^1.4.2",
+                "phpunit/phpunit": "^8.5.19 || ^9.4"
+            },
+            "bin": [
+                "bin/tus"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TusPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ankit Pokhrel",
+                    "email": "hello@ankit.pl"
+                }
+            ],
+            "description": "A pure PHP server and client for the tus resumable upload protocol v1.0.0",
+            "support": {
+                "issues": "https://github.com/ankitpokhrel/tus-php/issues",
+                "source": "https://github.com/ankitpokhrel/tus-php/tree/v2.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/pokharelankit",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-09-18T08:52:10+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.2.0",
@@ -643,25 +712,95 @@
             "time": "2022-02-23T14:25:13+00:00"
         },
         {
-            "name": "graham-campbell/result-type",
-            "version": "v1.1.2",
+            "name": "graham-campbell/manager",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "fbd48bce38f73f8a4ec8583362e732e4095e5862"
+                "url": "https://github.com/GrahamCampbell/Laravel-Manager.git",
+                "reference": "5c9e1e4b8f9ef5fc904545c617b83efa46d1bd09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/fbd48bce38f73f8a4ec8583362e732e4095e5862",
-                "reference": "fbd48bce38f73f8a4ec8583362e732e4095e5862",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/5c9e1e4b8f9ef5fc904545c617b83efa46d1bd09",
+                "reference": "5c9e1e4b8f9ef5fc904545c617b83efa46d1bd09",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.75 || ^9.0 || ^10.0 || ^11.0",
+                "illuminate/support": "^8.75 || ^9.0 || ^10.0 || ^11.0",
+                "php": "^7.4.15 || ^8.0.2"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^4.1",
+                "graham-campbell/testbench-core": "^4.1",
+                "mockery/mockery": "^1.6.6",
+                "phpunit/phpunit": "^9.6.15 || ^10.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Manager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                }
+            ],
+            "description": "Manager Provides Some Manager Functionality For Laravel",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Manager",
+                "Laravel-Manager",
+                "connector",
+                "framework",
+                "interface",
+                "laravel",
+                "manager"
+            ],
+            "support": {
+                "issues": "https://github.com/GrahamCampbell/Laravel-Manager/issues",
+                "source": "https://github.com/GrahamCampbell/Laravel-Manager/tree/v5.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/manager",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-12-03T23:16:15+00:00"
+        },
+        {
+            "name": "graham-campbell/result-type",
+            "version": "v1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Result-Type.git",
+                "reference": "3ba905c11371512af9d9bdd27d99b782216b6945"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/3ba905c11371512af9d9bdd27d99b782216b6945",
+                "reference": "3ba905c11371512af9d9bdd27d99b782216b6945",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
-                "phpoption/phpoption": "^1.9.2"
+                "phpoption/phpoption": "^1.9.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5.34 || ^9.6.13 || ^10.4.2"
+                "phpunit/phpunit": "^8.5.39 || ^9.6.20 || ^10.5.28"
             },
             "type": "library",
             "autoload": {
@@ -690,7 +829,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.2"
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.3"
             },
             "funding": [
                 {
@@ -702,26 +841,26 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-12T22:16:48+00:00"
+            "time": "2024-07-20T21:45:45+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.8.1",
+            "version": "7.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "41042bc7ab002487b876a0683fc8dce04ddce104"
+                "reference": "d281ed313b989f213357e3be1a179f02196ac99b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/41042bc7ab002487b876a0683fc8dce04ddce104",
-                "reference": "41042bc7ab002487b876a0683fc8dce04ddce104",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/d281ed313b989f213357e3be1a179f02196ac99b",
+                "reference": "d281ed313b989f213357e3be1a179f02196ac99b",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^1.5.3 || ^2.0.1",
-                "guzzlehttp/psr7": "^1.9.1 || ^2.5.1",
+                "guzzlehttp/promises": "^1.5.3 || ^2.0.3",
+                "guzzlehttp/psr7": "^2.7.0",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.2 || ^3.0"
@@ -732,9 +871,9 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
                 "ext-curl": "*",
-                "php-http/client-integration-tests": "dev-master#2c025848417c1135031fdf9c728ee53d0a7ceaee as 3.0.999",
+                "guzzle/client-integration-tests": "3.0.2",
                 "php-http/message-factory": "^1.1",
-                "phpunit/phpunit": "^8.5.36 || ^9.6.15",
+                "phpunit/phpunit": "^8.5.39 || ^9.6.20",
                 "psr/log": "^1.1 || ^2.0 || ^3.0"
             },
             "suggest": {
@@ -812,7 +951,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.8.1"
+                "source": "https://github.com/guzzle/guzzle/tree/7.9.2"
             },
             "funding": [
                 {
@@ -828,20 +967,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-03T20:35:24+00:00"
+            "time": "2024-07-24T11:22:20+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "bbff78d96034045e58e13dedd6ad91b5d1253223"
+                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/bbff78d96034045e58e13dedd6ad91b5d1253223",
-                "reference": "bbff78d96034045e58e13dedd6ad91b5d1253223",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
+                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
                 "shasum": ""
             },
             "require": {
@@ -849,7 +988,7 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
-                "phpunit/phpunit": "^8.5.36 || ^9.6.15"
+                "phpunit/phpunit": "^8.5.39 || ^9.6.20"
             },
             "type": "library",
             "extra": {
@@ -895,7 +1034,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.0.2"
+                "source": "https://github.com/guzzle/promises/tree/2.0.3"
             },
             "funding": [
                 {
@@ -911,20 +1050,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-03T20:19:20+00:00"
+            "time": "2024-07-18T10:29:17+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.6.2",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "45b30f99ac27b5ca93cb4831afe16285f57b8221"
+                "reference": "a70f5c95fb43bc83f07c9c948baa0dc1829bf201"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/45b30f99ac27b5ca93cb4831afe16285f57b8221",
-                "reference": "45b30f99ac27b5ca93cb4831afe16285f57b8221",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/a70f5c95fb43bc83f07c9c948baa0dc1829bf201",
+                "reference": "a70f5c95fb43bc83f07c9c948baa0dc1829bf201",
                 "shasum": ""
             },
             "require": {
@@ -939,8 +1078,8 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
-                "http-interop/http-factory-tests": "^0.9",
-                "phpunit/phpunit": "^8.5.36 || ^9.6.15"
+                "http-interop/http-factory-tests": "0.9.0",
+                "phpunit/phpunit": "^8.5.39 || ^9.6.20"
             },
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
@@ -1011,7 +1150,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.6.2"
+                "source": "https://github.com/guzzle/psr7/tree/2.7.0"
             },
             "funding": [
                 {
@@ -1027,7 +1166,74 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-03T20:05:35+00:00"
+            "time": "2024-07-18T11:15:46+00:00"
+        },
+        {
+            "name": "james-heinrich/getid3",
+            "version": "v1.9.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JamesHeinrich/getID3.git",
+                "reference": "06c7482532ff2b3f9111b011d880ca6699c8542b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JamesHeinrich/getID3/zipball/06c7482532ff2b3f9111b011d880ca6699c8542b",
+                "reference": "06c7482532ff2b3f9111b011d880ca6699c8542b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.0"
+            },
+            "suggest": {
+                "ext-SimpleXML": "SimpleXML extension is required to analyze RIFF/WAV/BWF audio files (also requires `ext-libxml`).",
+                "ext-com_dotnet": "COM extension is required when loading files larger than 2GB on Windows.",
+                "ext-ctype": "ctype extension is required when loading files larger than 2GB on 32-bit PHP (also on 64-bit PHP on Windows) or executing `getid3_lib::CopyTagsToComments`.",
+                "ext-dba": "DBA extension is required to use the DBA database as a cache storage.",
+                "ext-exif": "EXIF extension is required for graphic modules.",
+                "ext-iconv": "iconv extension is required to work with different character sets (when `ext-mbstring` is not available).",
+                "ext-json": "JSON extension is required to analyze Apple Quicktime videos.",
+                "ext-libxml": "libxml extension is required to analyze RIFF/WAV/BWF audio files.",
+                "ext-mbstring": "mbstring extension is required to work with different character sets.",
+                "ext-mysql": "MySQL extension is required to use the MySQL database as a cache storage (deprecated in PHP 5.5, removed in PHP >= 7.0, use `ext-mysqli` instead).",
+                "ext-mysqli": "MySQLi extension is required to use the MySQL database as a cache storage.",
+                "ext-rar": "RAR extension is required for RAR archive module.",
+                "ext-sqlite3": "SQLite3 extension is required to use the SQLite3 database as a cache storage.",
+                "ext-xml": "XML extension is required for graphic modules to analyze the XML metadata.",
+                "ext-zlib": "Zlib extension is required for archive modules and compressed metadata."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "getid3/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-1.0-or-later",
+                "LGPL-3.0-only",
+                "MPL-2.0"
+            ],
+            "description": "PHP script that extracts useful information from popular multimedia file formats",
+            "homepage": "https://www.getid3.org/",
+            "keywords": [
+                "codecs",
+                "php",
+                "tags"
+            ],
+            "support": {
+                "issues": "https://github.com/JamesHeinrich/getID3/issues",
+                "source": "https://github.com/JamesHeinrich/getID3/tree/v1.9.23"
+            },
+            "time": "2023-10-19T13:18:49+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1470,16 +1676,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.4.2",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "91c24291965bd6d7c46c46a12ba7492f83b1cadf"
+                "reference": "0026475f5c9a104410ae824cb5a4d63fa3bdb1df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/91c24291965bd6d7c46c46a12ba7492f83b1cadf",
-                "reference": "91c24291965bd6d7c46c46a12ba7492f83b1cadf",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/0026475f5c9a104410ae824cb5a4d63fa3bdb1df",
+                "reference": "0026475f5c9a104410ae824cb5a4d63fa3bdb1df",
                 "shasum": ""
             },
             "require": {
@@ -1492,8 +1698,8 @@
             },
             "require-dev": {
                 "cebe/markdown": "^1.0",
-                "commonmark/cmark": "0.30.3",
-                "commonmark/commonmark.js": "0.30.0",
+                "commonmark/cmark": "0.31.0",
+                "commonmark/commonmark.js": "0.31.0",
                 "composer/package-versions-deprecated": "^1.8",
                 "embed/embed": "^4.4",
                 "erusev/parsedown": "^1.0",
@@ -1515,7 +1721,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5-dev"
+                    "dev-main": "2.6-dev"
                 }
             },
             "autoload": {
@@ -1572,7 +1778,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-02T11:59:32+00:00"
+            "time": "2024-07-22T18:18:14+00:00"
         },
         {
             "name": "league/config",
@@ -2354,17 +2560,75 @@
             "time": "2022-01-27T09:35:39+00:00"
         },
         {
-            "name": "phpoption/phpoption",
-            "version": "1.9.2",
+            "name": "owen-oj/laravel-getid3",
+            "version": "v2.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "80735db690fe4fc5c76dfa7f9b770634285fa820"
+                "url": "https://github.com/Owen-oj/laravel-getid3.git",
+                "reference": "ec65579c4a083818dc37be010b58ff4b243b25e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/80735db690fe4fc5c76dfa7f9b770634285fa820",
-                "reference": "80735db690fe4fc5c76dfa7f9b770634285fa820",
+                "url": "https://api.github.com/repos/Owen-oj/laravel-getid3/zipball/ec65579c4a083818dc37be010b58ff4b243b25e6",
+                "reference": "ec65579c4a083818dc37be010b58ff4b243b25e6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "james-heinrich/getid3": "^1.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Owenoj\\LaravelGetId3\\GetId3ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Owenoj\\LaravelGetId3\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Owen Jubilant",
+                    "email": "owen.j@terktrendz.com",
+                    "homepage": "https://github.com/Owen-oj"
+                }
+            ],
+            "description": "This package is a wrapper around james-heinrich/getid3 to extract various information from media files",
+            "homepage": "https://github.com/owen-oj/laravel-getid3",
+            "keywords": [
+                "getid3",
+                "laravel",
+                "laravel-getid3"
+            ],
+            "support": {
+                "issues": "https://github.com/Owen-oj/laravel-getid3/issues",
+                "source": "https://github.com/Owen-oj/laravel-getid3/tree/v2.3"
+            },
+            "time": "2024-03-11T18:24:45+00:00"
+        },
+        {
+            "name": "phpoption/phpoption",
+            "version": "1.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "e3fac8b24f56113f7cb96af14958c0dd16330f54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/e3fac8b24f56113f7cb96af14958c0dd16330f54",
+                "reference": "e3fac8b24f56113f7cb96af14958c0dd16330f54",
                 "shasum": ""
             },
             "require": {
@@ -2372,13 +2636,13 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
-                "phpunit/phpunit": "^8.5.34 || ^9.6.13 || ^10.4.2"
+                "phpunit/phpunit": "^8.5.39 || ^9.6.20 || ^10.5.28"
             },
             "type": "library",
             "extra": {
                 "bamarni-bin": {
                     "bin-links": true,
-                    "forward-command": true
+                    "forward-command": false
                 },
                 "branch-alias": {
                     "dev-master": "1.9-dev"
@@ -2414,7 +2678,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.9.2"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.3"
             },
             "funding": [
                 {
@@ -2426,7 +2690,68 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-12T21:59:55+00:00"
+            "time": "2024-07-20T21:41:07+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "b1d3255ed9ad4d7254f9f9bba386c99f4bb983d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/b1d3255ed9ad4d7254f9f9bba386c99f4bb983d1",
+                "reference": "b1d3255ed9ad4d7254f9f9bba386c99f4bb983d1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.3",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^8.0 || ~9.4.4"
+            },
+            "suggest": {
+                "ext-relay": "Faster connection with in-memory caching (>=0.6.2)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Till Krüss",
+                    "homepage": "https://till.im",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A flexible and feature-complete Redis client for PHP.",
+            "homepage": "http://github.com/predis/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "support": {
+                "issues": "https://github.com/predis/predis/issues",
+                "source": "https://github.com/predis/predis/tree/v2.2.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-13T16:42:03+00:00"
         },
         {
             "name": "psr/clock",
@@ -5559,24 +5884,151 @@
             "time": "2022-04-27T08:53:50+00:00"
         },
         {
-            "name": "vlucas/phpdotenv",
-            "version": "v5.6.0",
+            "name": "vimeo/laravel",
+            "version": "5.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4"
+                "url": "https://github.com/vimeo/laravel.git",
+                "reference": "e0dbcd0ebb4d8292f99a00620255a55fda1a4b96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4",
-                "reference": "2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4",
+                "url": "https://api.github.com/repos/vimeo/laravel/zipball/e0dbcd0ebb4d8292f99a00620255a55fda1a4b96",
+                "reference": "e0dbcd0ebb4d8292f99a00620255a55fda1a4b96",
+                "shasum": ""
+            },
+            "require": {
+                "graham-campbell/manager": "^5.0",
+                "illuminate/contracts": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "php": "^7.2|^8.0",
+                "vimeo/vimeo-api": "^3.0"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.0|^3.1|^4.1",
+                "graham-campbell/testbench": "^5.2|^6.1",
+                "laravel/framework": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "laravel/lumen-framework": "^5.7",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^7.0|^9.5.10|^10.5|^11.0",
+                "psalm/plugin-laravel": "^1.4.0|^1.1|^2.7",
+                "vimeo/psalm": "^3.17|^4.19|^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Vimeo\\Laravel\\VimeoServiceProvider"
+                    ],
+                    "aliases": {
+                        "Vimeo": "Vimeo\\Laravel\\Facades\\Vimeo"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vimeo\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Ursenbach",
+                    "email": "jonu@vimeo.com"
+                },
+                {
+                    "name": "Vincent Klaiber",
+                    "email": "hello@vinkla.com",
+                    "homepage": "https://vinkla.com"
+                }
+            ],
+            "description": "A Vimeo bridge for Laravel",
+            "keywords": [
+                "laravel",
+                "video",
+                "vimeo"
+            ],
+            "support": {
+                "issues": "https://github.com/vimeo/laravel/issues",
+                "source": "https://github.com/vimeo/laravel/tree/5.9.0"
+            },
+            "time": "2024-03-12T21:38:07+00:00"
+        },
+        {
+            "name": "vimeo/vimeo-api",
+            "version": "3.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vimeo/vimeo.php.git",
+                "reference": "79885b642594b17f6c356dc949d3e4a58c356c9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vimeo/vimeo.php/zipball/79885b642594b17f6c356dc949d3e4a58c356c9b",
+                "reference": "79885b642594b17f6c356dc949d3e4a58c356c9b",
+                "shasum": ""
+            },
+            "require": {
+                "ankitpokhrel/tus-php": "^v1.0.0 || ^v2.0.0",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^1.0",
+                "phpunit/phpunit": "^7.4",
+                "vimeo/psalm": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vimeo\\": "src/Vimeo"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Vimeo",
+                    "homepage": "http://vimeo.com"
+                }
+            ],
+            "description": "Official PHP library for the Vimeo API.",
+            "homepage": "https://github.com/vimeo/vimeo.php",
+            "keywords": [
+                "video",
+                "vimeo"
+            ],
+            "support": {
+                "issues": "https://github.com/vimeo/vimeo.php/issues",
+                "source": "https://github.com/vimeo/vimeo.php/tree/3.0.10"
+            },
+            "time": "2022-02-18T14:05:55+00:00"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v5.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "a59a13791077fe3d44f90e7133eb68e7d22eaff2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/a59a13791077fe3d44f90e7133eb68e7d22eaff2",
+                "reference": "a59a13791077fe3d44f90e7133eb68e7d22eaff2",
                 "shasum": ""
             },
             "require": {
                 "ext-pcre": "*",
-                "graham-campbell/result-type": "^1.1.2",
+                "graham-campbell/result-type": "^1.1.3",
                 "php": "^7.2.5 || ^8.0",
-                "phpoption/phpoption": "^1.9.2",
+                "phpoption/phpoption": "^1.9.3",
                 "symfony/polyfill-ctype": "^1.24",
                 "symfony/polyfill-mbstring": "^1.24",
                 "symfony/polyfill-php80": "^1.24"
@@ -5593,7 +6045,7 @@
             "extra": {
                 "bamarni-bin": {
                     "bin-links": true,
-                    "forward-command": true
+                    "forward-command": false
                 },
                 "branch-alias": {
                     "dev-master": "5.6-dev"
@@ -5628,7 +6080,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.0"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.1"
             },
             "funding": [
                 {
@@ -5640,7 +6092,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-12T22:43:29+00:00"
+            "time": "2024-07-20T21:52:34+00:00"
         },
         {
             "name": "voku/portable-ascii",
@@ -8150,7 +8602,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "tymon/jwt-auth": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

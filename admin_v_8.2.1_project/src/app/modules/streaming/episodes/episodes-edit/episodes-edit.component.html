@@ -1,0 +1,126 @@
+<div class="modal-content">
+    <!--begin::Modal header-->
+    <div class="modal-header" id="kt_modal_add_user_header">
+        <!--begin::Modal title-->
+        <h2 class="fw-bolder">EDITAR / {{ EPISODE.title }}</h2>
+        <!--end::Modal title-->
+        <!--begin::Close-->
+        <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close" (click)="close()">
+            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                </svg>
+            </span>
+            <!--end::Svg Icon-->
+        </div>
+        <!--end::Close-->
+    </div>
+    <!--end::Modal header-->
+    <!--begin::Modal body-->
+    <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+        <!--begin::Form-->
+        <form id="kt_modal_add_user_form" class="form" action="#">
+            <!--begin::Scroll-->
+            <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class="required fw-bold fs-6 mb-2">TITULO DEL EPISODIO: </label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="text" name="title" [(ngModel)]="title" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" />
+                    <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class="required fw-bold fs-6 mb-2">ESTADO DEL EPISODIO:</label>
+                    <select
+                        class="form-control form-select-solid fw-bolder"
+                        name="state"
+                        placeholder="Selec. Estado"
+                        [(ngModel)]="state"
+                    >
+                        <option value="1">ACTIVO</option>
+                        <option value="2">INACTIVO</option>
+                    </select>
+                </div>
+                <!--end::Input group-->
+                
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class="fs-6 fw-bold form-label mt-3">
+                        <span>DESCRIPCION</span>
+                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's phone number (optional)." aria-label="Enter the contact's phone number (optional)."></i>
+                    </label>
+                    
+                    <textarea name="description" cols="30" rows="5" [(ngModel)]="description" class="form-control form-control-solid mb-3 mb-lg-0" ></textarea>
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                    <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                        <div class="col">
+                            <label class="fs-6 fw-bold form-label mt-3">
+                                <span>Imagen</span>
+                            </label>
+                            
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile"  accept=".jpeg, .bmp, .jpg, .png, .gif, .webp"  (change)="processFile($event)">
+                                <label class="custom-file-label" for="customFile">ELIJA EL ARCHIVO</label>
+                            </div>
+                        </div>
+                        <div class="col" *ngIf="IMAGEN_PREVISUALIZA">
+                            <img [src]="IMAGEN_PREVISUALIZA" width="100%" alt="">
+                        </div>
+                    </div>
+                <!--end::Input group-->
+                
+                <div class="row row-cols-2 row-cols-sm-3 rol-cols-md-2 row-cols-lg-3 py-5">
+                    <div class="col">
+                        <div class="d-flex">
+                            <div>
+                                <label class="form-label">SUBE TU VIDEO CONTENIDO: *</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile"  accept=".mp4"  (change)="processFileVideoContenido($event)">
+                                    <label class="custom-file-label" for="customFile">ELIJE EL ARCHIVO</label>
+                                </div>
+                            </div>
+                            <div class="mx-3">
+                                <button class="btn btn-sm btn-primary" *ngIf="!loading_video" (click)="UploadVideoContenido()">+</button>
+                                <span *ngIf="loading_video" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-2 row-cols-sm-3 rol-cols-md-2 row-cols-lg-3 py-5" *ngIf="link_vimeo_contenido">
+                    <div class="col s">
+                        <iframe [src]="urlGetVideoContenido()" 
+                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+            <!--end::Scroll-->
+            <!--begin::Actions-->
+            <div class="text-center pt-15 py-5" >
+                <button type="reset" class="btn btn-light me-3"
+                 (click)="close()">CERRAR</button>
+                <button type="submit" class="btn btn-primary" (click)="save()">
+                    <span class="indicator-label">EDITAR</span>
+                    <!-- <span class="indicator-progress">Please wait...
+                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span> -->
+                </button>
+            </div>
+            <!--end::Actions-->
+        </form>
+        <!--end::Form-->
+    </div>
+    <!--end::Modal body-->
+</div>

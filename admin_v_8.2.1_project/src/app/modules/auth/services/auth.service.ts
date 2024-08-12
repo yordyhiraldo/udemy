@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from 'src/app/config/config';
 
-
 export type UserType = UserModel | undefined;
 
 @Injectable({

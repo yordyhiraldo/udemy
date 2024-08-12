@@ -15,8 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit, OnDestroy {
   // KeenThemes mock, change it to:
   defaultAuth: any = {
-    email: 'yordy@gmail.com',
-    password: '12345678',
+    email: 'jgjgjgj@gmail.com',
+    password: '282220140604',
   };
   loginForm: FormGroup;
   hasError: boolean;
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.initForm();
     // get return url from route parameters or default to '/'
-    //this.returnUrl =
+    // this.returnUrl =
      // this.route.snapshot.queryParams['returnUrl'.toString()] || '/';
 
       // this.toastr.error("Validacion","El icono es obligatoria");

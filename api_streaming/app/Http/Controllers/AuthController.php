@@ -1,13 +1,11 @@
 <?php
- 
-namespace App\Http\Controllers;
- 
-use Validator;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
-use App\Models\User;
-use illuminate\Http\request;
 
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Validator;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -20,32 +18,34 @@ class AuthController extends Controller
     {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
-
+ 
+ 
     /**
      * Register a User.
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function register(Request $request) {
-        $validator = Validator::make($request->all(), [
+    public function register() {
+        $validator = Validator::make(request()->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
+            'password' => 'required|min:8',//confirmed
         ]);
-
+ 
         if($validator->fails()){
-            return response()->json($validator->errors(), 400);
+            return response()->json($validator->errors()->toJson(), 400);
         }
-
+ 
         $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->name = request()->name;
+        $user->email = request()->email;
+        $user->password = bcrypt(request()->password);
         $user->save();
-
+ 
         return response()->json($user, 201);
     }
-
+ 
+ 
     /**
      * Get a JWT via given credentials.
      *
@@ -53,40 +53,36 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-       
-        error_log($request->email);
-        if (! $token = auth("api")->attempt(
+        // $credentials = request(['email', 'password']);
+        if (! $token = auth('api')->attempt(
             ["email" => $request->email,
-             "password" => $request->password,
-             "state" => 1,
-             "type_user" => 1
+            "password" => $request->password,
+            "state" => 1,
+            "type_user" => 1
             ]
             )) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
-
+ 
         return $this->respondWithToken($token);
     }
 
-    /**
-     * Get a JWT via given credentials for streaming.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function login_streaming(Request $request)
+    public function login_ecommerce(Request $request)
     {
-        
-        if (! $token = auth("api")->attempt([
-            "email" => $request->email,
+        // $credentials = request(['email', 'password']);
+ 
+        if (! $token = auth('api')->attempt(
+            ["email" => $request->email,
             "password" => $request->password,
             "state" => 1,
-        ])) {
+            ]
+            )) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
-
+ 
         return $this->respondWithToken($token);
     }
-
+ 
     /**
      * Get the authenticated User.
      *
@@ -96,7 +92,7 @@ class AuthController extends Controller
     {
         return response()->json(auth()->user());
     }
-
+ 
     /**
      * Log the user out (Invalidate the token).
      *
@@ -105,10 +101,10 @@ class AuthController extends Controller
     public function logout()
     {
         auth()->logout();
-
+ 
         return response()->json(['message' => 'Successfully logged out']);
     }
-
+ 
     /**
      * Refresh a token.
      *
@@ -118,7 +114,7 @@ class AuthController extends Controller
     {
         return $this->respondWithToken(auth()->refresh());
     }
-
+ 
     /**
      * Get the token array structure.
      *
@@ -128,16 +124,15 @@ class AuthController extends Controller
      */
     protected function respondWithToken($token)
     {
-        $user = auth("api")->user();
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60,
-            'user' => [
-                'full_name' => $user->name . " " . $user->surname,
-                'email' => $user->email,
-                'role' => $user->role,
-                'avatar' => $user->avatar ? env("APP_URL") . "storage/" . $user->avatar : null,
+            "user" => [
+                "full_name" =>  auth('api')->user()->name.' '.auth('api')->user()->surname,
+                "email" => auth("api")->user()->email,
+                "role" => auth("api")->user()->role,
+                "avatar" => auth("api")->user()->avatar ? env("APP_URL")."storage/".auth("api")->user()->avatar : NULL,
             ]
         ]);
     }
