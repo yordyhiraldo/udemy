@@ -49,7 +49,7 @@ class AuthStreamingController extends Controller
 
         $user = User::create($request->all());
 
-        date_default_timezone_set("America/Lima");
+        date_default_timezone_set("America/Santo_Domingo");
         $today = today();
         $end_date = null;
 

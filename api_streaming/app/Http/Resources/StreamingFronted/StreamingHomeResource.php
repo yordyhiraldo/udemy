@@ -15,7 +15,7 @@ class StreamingHomeResource extends JsonResource
     public function toArray($request)
     {
         $actors = [];
-        foreach ($this->resource->actors as $key => $actor_streaming) {
+       foreach ($this->resource->actors as $key => $actor_streaming) {
             array_push($actors,$actor_streaming->actor->full_name);
         }
         // ["JOSE","PEPITO"]
@@ -42,7 +42,7 @@ class StreamingHomeResource extends JsonResource
             "tags_multiples" => $this->resource->getTags(),
             "state" => $this->resource->state,
             "created_at" => $this->resource->created_at->format("Y-m-d h:i:s"),
-            "actors" => implode(",",$actors),//"JOSE","PEPITO",
+           // "actors" => implode(",",$actors),//"JOSE","PEPITO",
             "created_format" => $this->resource->created_at->monthName. ' '.$this->resource->created_at->format('d').' '.$this->resource->created_at->format('Y')
         ];
     }

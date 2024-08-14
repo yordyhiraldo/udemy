@@ -48,37 +48,33 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $user_v = user::where("email",$request->email)->first();
+{
+    $user_v = User::where("email", $request->email)->first();
 
-        if ($user_v){
-            return response()->json([
-                "message" => 403,
-                "message_text" => "EL USUARIO YA EXISTE" 
-             ]);
-        }
-
-        if ($request->hasFile("img")){
-            $path = Storage::putFile("users",$request->file("img"));
-            $request->request->add(["avatar" => $path]);
-
-
-        }
-
-        if($request->new_password) {   
-            $request->request->add(["password" => bcrypt($request->new_password)]);
-         }
-
-
-     $user =  user::create($request->all());
-
-     return response()->json([
-        "message" => 200,
-        "user" => UsersResource::make($user), 
-
-     ]);
-
+    if ($user_v) {
+        return response()->json([
+            "message" => 403,
+            "message_text" => "EL USUARIO YA EXISTE"
+        ]);
     }
+
+    if ($request->hasFile("img")) {
+        $path = Storage::putFile("users", $request->file("img"));
+        $request->request->add(["avatar" => $path]);
+    }
+
+    // Encriptar la contraseña si está presente
+    if ($request->password) {   
+        $request->merge(["password" => bcrypt($request->password)]);
+    }
+
+    $user = User::create($request->all());
+
+    return response()->json([
+        "message" => 200,
+        "user" => UsersResource::make($user),
+    ]);
+}
 
     /**
      * Display the specified resource.
@@ -111,40 +107,36 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user_v = user::where("id","<>",$id)->where("email",$request->email)->first();
-
-        if ($user_v){
+        $user_v = User::where("id", "<>", $id)->where("email", $request->email)->first();
+    
+        if ($user_v) {
             return response()->json([
                 "message" => 403,
-                "message_text" => "EL USUARIO YA EXISTE" 
-             ]);
+                "message_text" => "EL USUARIO YA EXISTE"
+            ]);
         }
-
-
-        $user =  User::findOrFail($id);
-
-        if ($request->hasFile("img")){
-            if($user->avatar){
-               Storage::delete($user->avatar);
+    
+        $user = User::findOrFail($id);
+    
+        if ($request->hasFile("img")) {
+            if ($user->avatar) {
+                Storage::delete($user->avatar);
             }
-            $path = Storage::putFile("users",$request->file("img"));
-            $request->request->add(["avatar" => $path]);
-
-
+            $path = Storage::putFile("users", $request->file("img"));
+            $request->merge(["avatar" => $path]);
         }
-
-        if($request->new_password) {   
-            $request->request->add(["password" => bcrypt($request->new_password)]);
-         }
-
-
-         $user->update($request->all());
-
-     return response()->json([
-        "message" => 200,
-        "user" => UsersResource::make($user), 
-
-     ]);
+    
+        // Encriptar la nueva contraseña si se proporciona
+        if ($request->new_password) {
+            $request->merge(["password" => bcrypt($request->new_password)]);
+        }
+    
+        $user->update($request->all());
+    
+        return response()->json([
+            "message" => 200,
+            "user" => UsersResource::make($user),
+        ]);
     }
 
     /**

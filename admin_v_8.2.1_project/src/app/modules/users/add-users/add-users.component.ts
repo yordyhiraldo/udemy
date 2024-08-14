@@ -50,6 +50,8 @@ export class AddUsersComponent implements OnInit{
       this.toastr.error("LAS CONTRASEÑAS NO SON IGUALES", "VALIDACIÓN");
       return;
     }
+
+    
     
     let formData = new FormData();
     formData.append("img",this.IMAGEN_FILE)

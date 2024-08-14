@@ -3,18 +3,20 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\webhook\WebHookcontroller;
 use App\Http\Controllers\Admin\User\UsersController;
-use App\Http\Controllers\Admin\ProductAndPlanes\productPaypalcontroller;
-use App\Http\Controllers\Admin\ProductAndPlanes\Plan\PlanPaypalController;
-use App\Http\Controllers\Admin\Streaming\StreamingGenresController;
-use App\Http\Controllers\Admin\Streaming\StreamingActorController;
-use App\Http\Controllers\Admin\Streaming\StreamingTagController;
+use App\Http\Controllers\Streaming\AuthStreamingController;
+
+use App\Http\Controllers\Streaming\HomeStreamingController;
 use App\Http\Controllers\Admin\Streaming\StreamingController;
+
+use App\Http\Controllers\Admin\Streaming\StreamingTagController;
+use App\Http\Controllers\Admin\Streaming\StreamingActorController;
+use App\Http\Controllers\Admin\Streaming\StreamingGenresController;
 use App\Http\Controllers\Admin\Streaming\StreamingSeasonController;
 use App\Http\Controllers\Admin\Streaming\StreamingEpisodesController;
-use App\Http\Controllers\Streaming\HomeStreamingController;
-use App\Http\Controllers\Streaming\AuthStreamingController;
-use App\Http\Controllers\webhook\WebHookcontroller;
+use App\Http\Controllers\Admin\ProductAndPlanes\productPaypalcontroller;
+use App\Http\Controllers\Admin\ProductAndPlanes\Plan\PlanPaypalController;
 
 
 /*

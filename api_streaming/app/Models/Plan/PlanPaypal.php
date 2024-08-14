@@ -2,13 +2,15 @@
 
 namespace App\Models\Plan;
 
-use App\Models\product\productPaypal;
 use Carbon\Carbon;
+use App\Models\product\productPaypal;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PlanPaypal extends Model
 {
+    use SoftDeletes;
     use HasFactory;
     protected $fillable =[
         "name",
